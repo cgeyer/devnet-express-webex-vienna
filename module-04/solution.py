@@ -98,7 +98,7 @@ def sendQuestion():
     }
   }
 
-  wxtApi.messages.create(toPersonEmail='clgeyer@cisco.com', text='', attachments = [adaptiveCard])
+  wxtApi.messages.create(toPersonEmail=emailId, text='', attachments = [adaptiveCard])
 
   return 'Question sent'
 
