@@ -3,7 +3,7 @@ from webexteamssdk import WebexTeamsAPI
 import json
 
 #
-# MODULE 3
+# TASK 3
 #
 # Your task: Create an "interactive" chatbot which simply replies to the person
 # who sent a message to your bot.
@@ -56,17 +56,18 @@ def root():
     # the message ID is saved in the "data" section of the JSON object
     messageId = data['data']['id']
 
-    wxtApi = WebexTeamsAPI(access_token=teams_token)
-
-    # retrieve the complete message from Webex Teams
-    message = wxtApi.messages.get(messageId)
     # save who was sending the message
-    emailId = message.personEmail
+    emailId = data['data']['personEmail']
 
     # make sure to not encounter an endless loop by replying to messages
     # from the bot
     if emailId == bot_mail:
       return ''
+
+    wxtApi = WebexTeamsAPI(access_token=teams_token)
+
+    # retrieve the complete message from Webex Teams
+    message = wxtApi.messages.get(messageId)
 
     # create a new message text by quoting the old message
     messageToSend = "You just said:\n-------------\n" + message.text

@@ -1,7 +1,7 @@
 from webexteamssdk import WebexTeamsAPI
 
 #
-# MODULE 1
+# TASK 1
 #
 # Your task: send a message to your Webex Teams account, preferrably a question.
 # You should use the official WebexTeamsAPI - the documentation is available

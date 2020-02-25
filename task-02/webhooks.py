@@ -45,25 +45,17 @@ def listWebhooks():
 
   print('done')
 
-
-def registerWebhook(url):
-  """Registers an event listener for new messages to the specified URL."""
-
-  print('registering new webhook to URL %(url)s' % {'url' : url})
-
-  api = WebexTeamsAPI(access_token=teams_token)
-  api.webhooks.create(name='message-created-listener', targetUrl=url, resource='messages', event='created')
-
-  print('done')
-
-
-# the script only supports 3 arguments - "clear", "list" or a URL
-if (len(sys.argv) == 2):
-  if (sys.argv[1] == 'clear'):
-    clearWebhooks()
-  elif (sys.argv[1] == 'list'):
-    listWebhooks()
+def main():
+  # the script only supports 2 arguments - "clear" or "list"
+  if (len(sys.argv) == 2):
+    if (sys.argv[1] == 'clear'):
+      clearWebhooks()
+    elif (sys.argv[1] == 'list'):
+      listWebhooks()
+    else:
+      print('Usage: python ' + sys.argv[0] + ' clear|list')
   else:
-    registerWebhook(sys.argv[1])
-else:
-  print('Usage: python ' + sys.argv[0] + ' clear|list|url')
+    print('Usage: python ' + sys.argv[0] + ' clear|list')
+
+if __name__ == "__main__":
+  main()

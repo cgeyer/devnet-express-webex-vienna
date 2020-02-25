@@ -56,14 +56,17 @@ def registerWebhook(url):
 
   print('done')
 
-
-# the script only supports 3 arguments - "clear", "list" or a URL
-if (len(sys.argv) == 2):
-  if (sys.argv[1] == 'clear'):
-    clearWebhooks()
-  elif (sys.argv[1] == 'list'):
-    listWebhooks()
+def main():
+  # the script only supports 3 arguments - "clear", "list" or a URL
+  if (len(sys.argv) == 2):
+    if (sys.argv[1] == 'clear'):
+      clearWebhooks()
+    elif (sys.argv[1] == 'list'):
+      listWebhooks()
+    else:
+      registerWebhook(sys.argv[1])
   else:
-    registerWebhook(sys.argv[1])
-else:
-  print('Usage: python ' + sys.argv[0] + ' clear|list|url')
+    print('Usage: python ' + sys.argv[0] + ' clear|list|url')
+
+if __name__ == "__main__":
+  main()

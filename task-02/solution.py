@@ -1,7 +1,7 @@
 from webexteamssdk import WebexTeamsAPI
 
 #
-# MODULE 2
+# TASK 2
 #
 # Your task: register a webhook which should trigger when your bot receives a
 # message. In order to test whether your script works properly, you can use

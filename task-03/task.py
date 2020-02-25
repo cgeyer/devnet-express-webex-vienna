@@ -3,7 +3,7 @@ from webexteamssdk import WebexTeamsAPI
 import json
 
 #
-# MODULE 3
+# TASK 3
 #
 # Your task: Create an "interactive" chatbot which simply replies to the person
 # who sent a message to your bot.
