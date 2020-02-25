@@ -4,7 +4,7 @@ import json
 import requests
 
 #
-# MODULE 4
+# TASK 4
 #
 # Your task: Create an chatbot which sends out a multiple choice question using
 # adaptive cards.
